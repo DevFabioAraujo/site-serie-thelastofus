@@ -1,0 +1,15 @@
+/*Este arquivo tem como finalidade de resetar padrões Css colocado pelo navegador*/
+
+*{/*defini todas tags do dom*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ ul{
+    list-style: none;/*retira todas as bolinhas das listas*/
+ }
+
+ a{
+    text-decoration: none;/*retira todos sublinhados dos links*/
+ }

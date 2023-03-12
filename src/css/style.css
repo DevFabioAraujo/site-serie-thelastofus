@@ -1,0 +1,117 @@
+body{
+    font-family: 'Poppins',sans-serif;
+    max-width: 1280px;/*definimos a largura maxima*/
+    margin: 0 auto;/*0 encima e embaixo e auto nos lados*/
+}
+main:after{/*pseudo elemento do html*/
+   content: '';
+   min-height: 100vh;
+   width: 100vw;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: linear-gradient(90deg,rgba(0, 0, 0, 1)10%,rgb(0, 0, 0,0.05926120448179273) 50%,rgb(0, 0,0, 1) 90%);
+   z-index: -1;
+}
+
+.conteudo{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh ; /* determina a altura pegando o tamanho da tela*/
+   justify-content: space-evenly;/*usa um spaçamento uniforme nas tags filhos dentro do conteudo pai*/
+   
+}
+
+.informacoes .logo{
+    max-width: 350px;
+    filter: invert(1);/*invert a cor para uma outra tonalidade dependendo do valor que e usado dentro do parentese*/
+    margin-bottom: 80px;
+}
+.informacoes .descricao{
+    width: 40%;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 30px;
+
+}
+.botoes-carrossel{
+    display: flex;/*1° usa o  display flex para depois usar o justify-content*/
+    justify-content: center;
+    gap:20px;/*da um espaçamento entre os botoes mais uniforme*/
+
+
+}
+
+.botoes-carrossel .botao{
+ background-color: #ffffff;
+ width: 15px;
+ height: 15px;
+ border-radius: 50%;/* */
+ border: 2px solid transparent;
+ cursor: pointer;
+ border-color: #ffffff;
+}
+.botoes-carrossel .botao.selecionado{/*usando especificidade*/
+    background-color: #1d8346;
+    
+   }
+
+.menu-lateral{
+    /* background-color: #00ffff; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.menu-lateral ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-lateral .icone{ /*aplica uma transição nos icones*/
+    width: 30px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+    
+}
+.menu-lateral .icone:hover{
+    transform: scale(1.2);
+}
+
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;/*coloca as imagens embaixo de tudo*/
+}
+
+.carrossel .imagem{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;/*centraliza as imagens sem perde as propoções*/
+    display: none;/*esconde as imagens*/
+    animation: mudarImagem 0.7s;/*cria um efeito na imagens de opacidade*/
+}
+
+.carrossel .imagem.ativa{
+    display: block;/*mostra as imagens*/
+}
+
+@keyframes mudarImagem{
+    from{
+        /*peimeiro estagio*/
+        opacity: 0.85;
+
+    }to{
+        /*fim do estagio*/
+        opacity: 1;
+
+    }
+}
+
